@@ -84,6 +84,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4434069631734180}
   - component: {fileID: 54487916329526936}
+  - component: {fileID: 114244723618803566}
+  - component: {fileID: 114828379382690044}
+  - component: {fileID: 114870989928757428}
   - component: {fileID: 114713344185785288}
   - component: {fileID: 114833486511788816}
   - component: {fileID: 114960810277799258}
@@ -989,7 +992,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1125191293552788}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 500, z: -1.91}
+  m_LocalPosition: {x: 28.8, y: 500, z: -1.91}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4498026634375700}
@@ -2482,6 +2485,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9939a70895b97a4899bc1192b0c352f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isClashed: 0
+--- !u!114 &114244723618803566
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1125191293552788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58d893ab54f68ee4dab0ba690bf32f80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 0
+  myGroupID: 0
+  targetObject: {fileID: 0}
+  _position: {x: 0, y: 0, z: 0}
+  _velocity: {x: 0, y: 0, z: 0}
+  groundControlStation: {fileID: 0}
 --- !u!114 &114376002003179196
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2522,6 +2543,7 @@ MonoBehaviour:
   m_SpeedEffect: 0.01
   m_TakeoffHeight: 5
   m_Target: {fileID: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &114549819988432964
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2580,6 +2602,23 @@ MonoBehaviour:
   m_AirBrakesEffect: 3
   m_ThrottleChangeSpeed: 0.3
   m_DragIncreaseFactor: 0.001
+--- !u!114 &114828379382690044
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1125191293552788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50d6ef29156de254282899d624e314d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GPS_on: 1
+  GPS_output: {x: 0, y: 0, z: 0}
+  Accelerometer_on: 1
+  Accelerometer_output: {x: 0, y: 0, z: 0}
+  Gyroscope_on: 1
+  Gyroscope_output: {x: 0, y: 0, z: 0}
 --- !u!114 &114833486511788816
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2609,6 +2648,23 @@ MonoBehaviour:
     amount: 30
     type: 0
     originalLocalRotation: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &114870989928757428
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1125191293552788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e39bba8f43f71344a46e1bf6707c1be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minDistance: 100
+  cohesionMultiplier: 1
+  allignmentMultiplier: 1
+  seperationMultiplier: 1
+  targetMultiplier: 1
+  meanMultiplier: 20
 --- !u!114 &114960810277799258
 MonoBehaviour:
   m_ObjectHideFlags: 1

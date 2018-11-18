@@ -42,13 +42,16 @@ namespace UnityStandardAssets.Vehicles.Aeroplane
         private Rigidbody m_Rigidbody;
 	    WheelCollider[] m_WheelColliders;
 
-
-        private void Start()
-        {
+        private void Start() {
             m_Rigidbody = GetComponent<Rigidbody>();
-            // Store original drag settings, these are modified during flight.
             m_OriginalDrag = m_Rigidbody.drag;
             m_OriginalAngularDrag = m_Rigidbody.angularDrag;
+            
+        }
+
+        public void StartMotor()
+        {
+            // Store original drag settings, these are modified during flight.
 
 			for (int i = 0; i < transform.childCount; i++ )
 			{

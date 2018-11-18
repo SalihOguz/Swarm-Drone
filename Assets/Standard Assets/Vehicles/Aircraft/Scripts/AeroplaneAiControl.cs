@@ -22,6 +22,7 @@ namespace UnityStandardAssets.Vehicles.Aeroplane
         private AeroplaneController m_AeroplaneController;  // The aeroplane controller that is used to move the plane
         private float m_RandomPerlin;                       // Used for generating random point on perlin noise so that the plane will wander off path slightly
         private bool m_TakenOff;                            // Has the plane taken off yet
+        public Vector3 targetPosition;
 
 
         // setup script properties
@@ -41,6 +42,11 @@ namespace UnityStandardAssets.Vehicles.Aeroplane
             m_TakenOff = false;
         }
 
+        void Start()
+        {
+            targetPosition = m_Target.transform.position;
+        }
+
 
         // fixed update is called in time with the physics system update
         private void FixedUpdate()
@@ -48,7 +54,7 @@ namespace UnityStandardAssets.Vehicles.Aeroplane
             if (m_Target != null)
             {
                 // make the plane wander from the path, useful for making the AI seem more human, less robotic.
-                Vector3 targetPos = m_Target.position;
+                Vector3 targetPos = targetPosition; //m_Target.position;
                                     // transform.right*
                                     // (Mathf.PerlinNoise(Time.time*m_LateralWanderSpeed, m_RandomPerlin)*2 - 1)*
                                     // m_LateralWanderDistance;
@@ -111,6 +117,7 @@ namespace UnityStandardAssets.Vehicles.Aeroplane
         // allows other scripts to set the plane's target
         public void SetTarget(Transform target)
         {
+            targetPosition = m_Target.transform.position;
             m_Target = target;
         }
     }
